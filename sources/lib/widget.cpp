@@ -2,6 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include "resources.hpp"
 
+
+static void printVec3f(sf::Vector2f vec, const char* name)
+{
+	std::cout << name << ": x-> " << vec.x << ", y-> " << vec.y << std::endl;
+}
+
 Application::Application(const char* title)
 {
 	m_Window.create(sf::VideoMode({WITDTH,HEIGHT}), title, sf::Style::Close);
@@ -49,7 +55,6 @@ void Label::draw(sf::RenderWindow& win)
 Button::Button(const char* string, sf::Vector2f size)
 	: m_Size(size), m_String(string)
 {
-
 	m_Label = std::make_unique<Label>(Label(string,24,true));
 	m_Label->setColor(sf::Color(81,255,13));
 
@@ -59,12 +64,15 @@ Button::Button(const char* string, sf::Vector2f size)
 	m_Body.setFillColor(sf::Color(70,70,70));
 	m_Body.setOutlineThickness(3.0f);
 	m_Body.setOutlineColor(sf::Color::White);
+
 	m_Body.setOrigin(m_Body.getLocalBounds().getCenter());
+	IsOriginPosition = true;
 
 	this->setPosition(m_Body.getSize()/2.0f);
 
 	
 }
+
 
 void Button::attachEvent(const std::function<void()> &foo)
 {
@@ -81,25 +89,30 @@ static bool checkCollision(const sf::Vector2i current, sf::Vector2i midToBound, 
 }
 void Button::updateAction(const std::optional<sf::Event> &event, sf::RenderWindow& win)
 {
+	if (!m_OnClick)
+	{
+		return;
+	}
 	static bool isClicked = false;
+
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
+
 		/*sf::Vector2i current = sf::Mouse::getPosition(win);
-	sf::Vector2i BoxSize = sf::Vector2i(m_Body.getSize())/2;
-	sf::Vector2i Position = sf::Vector2i(m_Body.getPosition());
-	*/
+		sf::Vector2i BoxSize = sf::Vector2i(m_Body.getSize())/2;
+		sf::Vector2i Position = sf::Vector2i(m_Body.getPosition());
+		*/
 		if (checkCollision(sf::Mouse::getPosition(win), sf::Vector2i(m_Body.getSize()) / 2, sf::Vector2i(m_Body.getPosition())))
 		{
+			if (!isClicked)
+			{
+				isClicked = true;
+				m_Body.setFillColor(sf::Color(70, 70, 70));
+				m_Label->setStyle(sf::Text::Style::Underlined);
 
-		if (!isClicked)
-		{
-			isClicked = true;
-			m_Body.setFillColor(sf::Color(70,70,70));
-			m_Label->setStyle(sf::Text::Style::Underlined);
-			
-		}
-		m_OnClick();
+				m_OnClick();
+			}
 		}
 	}
 	else if (isClicked)
@@ -124,8 +137,47 @@ void Button::setPosition(const sf::Vector2f& position)
 	m_Label->setPosition(position);
 }
 
-std::optional<sf::Vector2f> Button::getPosition() const
+
+// ---------------------------- END ---------------------------------//
+
+// ----------------------- HBox -----------------------------------//
+
+
+
+
+void HBox::updateAction(const std::optional<sf::Event>& event, sf::RenderWindow& win)
 {
-	return m_Body.getPosition();
+	for (Widget* ptr : m_WidgetCollection)
+	{
+		ptr->updateAction(event,win);
+	}
 }
 
+void HBox::draw(sf::RenderWindow& win)
+{
+	for (Widget* ptr : m_WidgetCollection)
+	{
+		ptr->draw(win);
+	}
+}
+void HBox::setLayout()
+{
+    sf::Vector2f space = m_Margin;
+    for (Widget* ptr : m_WidgetCollection)
+    {
+        if (ptr->IsOriginPosition)
+        {
+            ptr->setPosition(space + (ptr->getSize() / 2.0f));
+            space += sf::Vector2f(m_Space.x, 0.0f) + sf::Vector2f(ptr->getSize().x,0.0f);
+        }
+        else
+        {
+            ptr->setPosition(space);
+            space += sf::Vector2f(m_Space.x, 0.0f) + sf::Vector2f(ptr->getSize().x, 0.0f);
+        }
+    }
+}
+
+
+
+// ---------------------------- END ---------------------------------//

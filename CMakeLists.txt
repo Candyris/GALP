@@ -20,7 +20,7 @@ set(SOURCES_FILES
     "sources/lib/widget.cpp"
     "sources/lib/resources.cpp" 
     "example/label.cpp"
- "example/buttton.cpp" "example/AddShortcut.cpp")
+ "example/buttton.cpp" "example/AddShortcut.cpp" "example/HBox.cpp")
 set(HEADER_FILES 
     "sources/lib/widget.hpp"
     "sources/lib/windef.hpp"
