@@ -8,9 +8,7 @@
 #include <optional>
 #include <iostream>
 #include <unordered_map>
-#include <crtdbg.h>
 
-#include <Windows.h>
 
 // Widget is a visual element in a user-interface
 class Widget
