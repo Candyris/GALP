@@ -18,7 +18,9 @@ FetchContent_MakeAvailable(SFML)
 set(SOURCES_FILES 
     "sources/application/main.cpp"
     "sources/lib/widget.cpp"
-    "sources/lib/resources.cpp")
+    "sources/lib/resources.cpp" 
+    "example/label.cpp"
+ "example/buttton.cpp" "example/AddShortcut.cpp")
 set(HEADER_FILES 
     "sources/lib/widget.hpp"
     "sources/lib/windef.hpp"
