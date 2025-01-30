@@ -20,16 +20,39 @@ set(SOURCES_FILES
     "sources/lib/widget.cpp"
     "sources/lib/resources.cpp" 
     "example/label.cpp"
- "example/buttton.cpp" "example/AddShortcut.cpp" "example/HBox.cpp")
+    "example/buttton.cpp" 
+    "example/AddShortcut.cpp" 
+    "example/HBox.cpp" 
+    "sources/lib/Label.cpp"
+    "sources/lib/Button.cpp" 
+    "sources/lib/HBox.cpp" 
+    "sources/lib/Slider.cpp" 
+    "sources/lib/Application.cpp" 
+    "sources/lib/Object.cpp"
+    "sources/lib/Utlity.cpp"
+
+)
 set(HEADER_FILES 
     "sources/lib/widget.hpp"
     "sources/lib/windef.hpp"
     "sources/lib/resources.hpp"
+    "sources/lib/Label.hpp"
+    "sources/lib/Button.hpp" 
+    "sources/lib/HBox.hpp" 
+    "sources/lib/Slider.hpp" 
+    "sources/lib/Application.hpp" 
+    "sources/lib/Object.hpp"
+    "sources/lib/GALP.hpp"
+    "sources/lib/Utlity.hpp"
 )
 
-add_executable(main ${SOURCES_FILES} ${HEADER_FILES})
+add_executable(main ${SOURCES_FILES} ${HEADER_FILES} )
+
+# add_executable(main WIN32 ${SOURCES_FILES} ${HEADER_FILES} )
+
 
 # target_include_directories(main PUBLIC include)
 target_compile_features(main PRIVATE cxx_std_20)
 target_link_libraries(main PRIVATE SFML::Graphics)
 file (COPY resources DESTINATION ${CMAKE_BINARY_DIR})
+

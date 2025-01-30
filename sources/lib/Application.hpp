@@ -1,0 +1,37 @@
+#pragma once 
+#include "widget.hpp"
+#include <unordered_map>
+#include <functional>
+
+class Application
+{
+public:
+	using ShortcutPair = std::pair<sf::Keyboard::Key, std::function<void()>>;
+	using ShortcutMap = std::unordered_map<sf::Keyboard::Key, std::function<void()>>;
+	Application(const char* title);
+
+	void setMainWidget(Widget* widget)
+	{
+		this->m_MainWidget = widget;
+	}
+
+	// Later fix it to a Map structure
+	void checkShortcuts();
+
+	void updateAction(const std::optional<sf::Event>& event);
+
+	void show();
+	
+	void close()
+	{
+		m_Window.close();
+	}
+	void addKeyShortcut(sf::Keyboard::Key key, std::function<void()> foo)
+	{
+		m_Shortcuts[key] = foo;
+	}
+private:
+	sf::RenderWindow m_Window;
+	Widget* m_MainWidget;
+	ShortcutMap m_Shortcuts;
+};

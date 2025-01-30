@@ -1,4 +1,4 @@
-//#include "../sources/lib/widget.hpp"
+//#include "../sources/lib/GALP.hpp"
 //
 //int main()
 //{
