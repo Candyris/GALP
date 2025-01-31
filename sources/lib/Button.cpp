@@ -1,5 +1,5 @@
 #include "Button.hpp"
-#include "Utlity.hpp"
+#include "Utility.hpp"
 
 Button::Button(const char* string, sf::Vector2f size)
 	: m_Size(size), m_String(string)
@@ -34,7 +34,7 @@ void Button::updateAction(const std::optional<sf::Event>& event, sf::RenderWindo
 		sf::Vector2i BoxSize = sf::Vector2i(m_Body.getSize())/2;
 		sf::Vector2i Position = sf::Vector2i(m_Body.getPosition());
 		*/
-		if (Utlity::checkCollision<int>(sf::Mouse::getPosition(win), sf::Vector2i(m_Body.getSize()) / 2, sf::Vector2i(m_Body.getPosition())))
+		if (Utility::checkCollision<int>(sf::Mouse::getPosition(win), sf::Vector2i(m_Body.getSize()) / 2, sf::Vector2i(m_Body.getPosition())))
 		{ 
 			if (!isClicked)
 			{

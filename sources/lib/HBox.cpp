@@ -1,5 +1,5 @@
 #include "HBox.hpp"
-#include "Utlity.hpp"
+#include "Utility.hpp"
 
 void HBoxLayout::updateAction(const std::optional<sf::Event>& event, sf::RenderWindow& win)
 {

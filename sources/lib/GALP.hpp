@@ -7,3 +7,5 @@
 #include "Slider.hpp"
 #include "SpinBox.hpp"
 #include "Application.hpp"
+#include "LineEdit.hpp"
+

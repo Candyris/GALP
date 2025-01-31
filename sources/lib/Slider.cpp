@@ -1,5 +1,5 @@
 #include "Slider.hpp"
-#include "Utlity.hpp"
+#include "Utility.hpp"
 #include <cmath>
 
 void Slider::draw(sf::RenderWindow& win)
@@ -15,14 +15,22 @@ void Slider::updateAction(const std::optional<sf::Event>& event, sf::RenderWindo
 	sf::Vector2f currentMouse= sf::Vector2f(sf::Mouse::getPosition(win));
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
-		if (Utlity::checkCollision(currentMouse, m_Bar.getSize()/2.0f, m_Bar.getPosition()))
+		if (Utility::checkCollision(currentMouse, m_Bar.getSize()/2.0f, m_Bar.getPosition()))
 		{
 			m_BarFill.setSize(sf::Vector2f(currentMouse.x - (m_Bar.getPosition().x - (m_Bar.getSize().x / 2.0f)), m_Bar.getSize().y));
-			int percentage = round(Utlity::calPercentage<float>(m_BarFill.getSize().x, m_Bar.getSize().x));
-			std::cout << "Percentage: " << percentage<<"%\n" ;
+			m_Value = round(Utility::calPercentage<float>(m_BarFill.getSize().x, m_Bar.getSize().x));
+			std::cout << "Percentage: " << m_Value.getValue()<<"%\n" ;
 		}
 	}
 }
 
-		//Utlity::printVec2<float>(this->getPosition(),"current Position");
+void Slider::setBarValue(const int val)
+{
+	m_Value = val;
+	m_BarFill.setSize(sf::Vector2(Utility::calSection<float>((float)val, m_Bar.getSize().x), m_Bar.getSize().y));
+
+
+}
+
+		//Utility::printVec2<float>(this->getPosition(),"current Position");
 		//this->setPosition(sf::Vector2f(sf::Mouse::getPosition(win)));

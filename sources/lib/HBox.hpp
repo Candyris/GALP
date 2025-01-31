@@ -20,7 +20,7 @@ public:
 	template<typename T>
 	void addWidget(T* widget)
 	{
-		m_WidgetCollection.push_back(widget);
+		m_WidgetCollection.push_back(dynamic_cast<Widget*>(widget));
 		this->setLayout();
 	}
 

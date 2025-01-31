@@ -3,9 +3,10 @@
 
 Application::Application(const char* title)
 {
-	m_Window.create(sf::VideoMode({ WITDTH,HEIGHT }), title, sf::Style::Close | sf::Style::Resize);
+	m_Window.create(sf::VideoMode({ WITDTH,HEIGHT }), title, sf::Style::Close );
 	m_MainWidget = nullptr;
 	m_Window.setVerticalSyncEnabled(true);
+	m_BackgroundColor = sf::Color::Black;
 }
 
 void Application::checkShortcuts()
@@ -36,10 +37,15 @@ void Application::show()
 		{
 			this->updateAction(event);
 		}
-		m_Window.clear();
+		m_Window.clear(m_BackgroundColor);
 		if (m_MainWidget)
 			m_MainWidget->draw(m_Window);
 		m_Window.display();
 	}
+}
+
+void Application::setBackgroundColor(const sf::Color& color)
+{
+	m_BackgroundColor = color;
 }
 

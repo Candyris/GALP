@@ -1,23 +1,25 @@
 #include "../lib/GALP.hpp"
 
-//#include <Windows.h>
-//int WINAPI WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nCmdShow) for window application only
-
 int main()
 {
-	Application app("Slider");
+	Application app("Snap");
 
-	Slider slider;
-	Label lab("Hello",100);
-	Label lab1("Hello",20);
-	Button button("Touch me",sf::Vector2f(100.0f,100.0f));
-	HBoxLayout b;
-	b.addWidget(&lab1);
-	b.addWidget(&slider);
-	b.addWidget(&button);
+	app.setBackgroundColor({12,34,86 });
 
-	app.setMainWidget(&b);
+	Label label("Good Moring");
+	HBoxLayout hbox({20.0f,20.0f},{20.0f,20.0f});
+	LineEdit edit({300.0f,32.0f});
+	Button button("Ok!", {200.0f,32.0f});
+
+	hbox.addWidget<LineEdit>(&edit);
+	hbox.addWidget<Label>(&label);
+	hbox.addWidget<Button>(&button);
+
+	Object::connect(button, []() {std::cout << "Hello\n";});
+
+	app.setMainWidget(&hbox);
 	app.show();
+
 
 	return 0;
 }

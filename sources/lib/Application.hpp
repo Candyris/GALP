@@ -30,8 +30,11 @@ public:
 	{
 		m_Shortcuts[key] = foo;
 	}
+	void setBackgroundColor(const sf::Color& color);
+
 private:
 	sf::RenderWindow m_Window;
 	Widget* m_MainWidget;
 	ShortcutMap m_Shortcuts;
+	sf::Color m_BackgroundColor;
 };

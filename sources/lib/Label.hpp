@@ -25,6 +25,8 @@ public:
 		}
 
 	}
+
+	void setString(const std::string& str) { m_TextStr = str; m_Text.setString(str); };
 	void setPosition(const sf::Vector2f& position);
 	void setCharSize(const int pixel);
 	void setStyle(uint8_t style);

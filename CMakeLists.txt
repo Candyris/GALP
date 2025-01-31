@@ -29,8 +29,9 @@ set(SOURCES_FILES
     "sources/lib/Slider.cpp" 
     "sources/lib/Application.cpp" 
     "sources/lib/Object.cpp"
-    "sources/lib/Utlity.cpp"
-
+    "sources/lib/Utility.cpp"
+    "example/slider.cpp"
+    "sources/lib/LineEdit.cpp"
 )
 set(HEADER_FILES 
     "sources/lib/widget.hpp"
@@ -43,7 +44,8 @@ set(HEADER_FILES
     "sources/lib/Application.hpp" 
     "sources/lib/Object.hpp"
     "sources/lib/GALP.hpp"
-    "sources/lib/Utlity.hpp"
+    "sources/lib/Utility.hpp"
+    "sources/lib/LineEdit.hpp"
 )
 
 add_executable(main ${SOURCES_FILES} ${HEADER_FILES} )
