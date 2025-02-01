@@ -1,5 +1,4 @@
 #include "SpinBox.hpp"
-#include "utility.hpp"
 #include <string>
 
 SpinBox::SpinBox(Utility::Range<int> range, int interval,const sf::Vector2f& size)
