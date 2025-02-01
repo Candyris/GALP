@@ -44,6 +44,11 @@ void Application::show()
 	}
 }
 
+void Application::close()
+{
+	m_Window.close();
+}
+
 void Application::setBackgroundColor(const sf::Color& color)
 {
 	m_BackgroundColor = color;

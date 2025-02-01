@@ -1,7 +1,7 @@
 #pragma once 
 #include "widget.hpp"
 #include <unordered_map>
-#include <functional>
+#include <functional> 
 
 class Application
 {
@@ -22,10 +22,7 @@ public:
 
 	void show();
 	
-	void close()
-	{
-		m_Window.close();
-	}
+	void close();
 	void addKeyShortcut(sf::Keyboard::Key key, std::function<void()> foo)
 	{
 		m_Shortcuts[key] = foo;

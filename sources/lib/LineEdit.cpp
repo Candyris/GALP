@@ -3,7 +3,7 @@
 #include <string>
 
 LineEdit::LineEdit(const sf::Vector2<float>& size, const int maxSize)
-	:m_MaxSize(0)
+	:m_MaxSize(0), m_IsClicked(false)
 {
 	this->IsOriginPosition = false;
 
@@ -22,19 +22,18 @@ LineEdit::LineEdit(const sf::Vector2<float>& size, const int maxSize)
 
 void LineEdit::updateAction(const std::optional<sf::Event>& event, sf::RenderWindow& win)
 {
-	static bool state = false;
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
 		if (Utility::checkCollision<float>(sf::Vector2f(sf::Mouse::getPosition(win)), m_Body.getSize(), m_Body.getPosition()))
 		{
-			state = true;
+			m_IsClicked = true;
 		}
 		else
 		{
-			state = false;
+			m_IsClicked = false;
 		}
 	}
-	if (state)
+	if (m_IsClicked)
 	{
 		if (const std::optional<char> character = Utility::getKeyPressed(event))
 		{

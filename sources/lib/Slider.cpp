@@ -11,7 +11,6 @@ void Slider::draw(sf::RenderWindow& win)
 
 void Slider::updateAction(const std::optional<sf::Event>& event, sf::RenderWindow& win)
 {
-	//m_OnClick();
 	sf::Vector2f currentMouse= sf::Vector2f(sf::Mouse::getPosition(win));
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
@@ -19,7 +18,8 @@ void Slider::updateAction(const std::optional<sf::Event>& event, sf::RenderWindo
 		{
 			m_BarFill.setSize(sf::Vector2f(currentMouse.x - (m_Bar.getPosition().x - (m_Bar.getSize().x / 2.0f)), m_Bar.getSize().y));
 			m_Value = round(Utility::calPercentage<float>(m_BarFill.getSize().x, m_Bar.getSize().x));
-			std::cout << "Percentage: " << m_Value.getValue()<<"%\n" ;
+			if (!m_OnClick) return;
+			m_OnClick();
 		}
 	}
 }

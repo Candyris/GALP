@@ -21,6 +21,7 @@ public:
 	*/
 
 private:
+	bool m_IsClicked;
 	std::string m_String;
 	int m_MaxSize;
 	sf::RectangleShape m_Body;

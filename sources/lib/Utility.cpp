@@ -7,7 +7,7 @@ std::optional<char> Utility::getKeyReleased(const std::optional<sf::Event>& even
 		int code = static_cast<int>(key->code);
 		if (0 <= code && code <= 25)
 		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::RShift))
 			{
 				return static_cast<char>(code + 65);
 			}
@@ -31,7 +31,7 @@ std::optional<char> Utility::getKeyPressed(const std::optional<sf::Event>& event
 		int code = static_cast<int>(key->code);
 		if (0 <= code && code <= 25)
 		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::RShift)) // No CapsLock || key->scancode ==  sf::Keyboard::Scancode::CapsLock
 			{
 				return static_cast<char>(code + 65);
 			}

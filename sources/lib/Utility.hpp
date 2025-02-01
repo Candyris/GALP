@@ -17,7 +17,7 @@ namespace Utility {
 	template <typename T>
 	T calSection(T percentage, T total)
 	{
-		return (T)(total * percentage) /100;
+		return (T)(total * percentage) / (100);
 	}
 	
 	// change the name to be reasonable
@@ -72,6 +72,7 @@ namespace Utility {
 			this->setValue(val);
 			return *this;
 		}
+
 	private:
 		T m_Value;
 		T m_Max, m_Min;

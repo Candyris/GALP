@@ -14,6 +14,6 @@ public:
 	virtual void setColor(const sf::Color& color) {}
 	virtual sf::Vector2f getPosition() const { return sf::Vector2f(100.0f, 100.0f); }
 	virtual sf::Vector2f getSize() const { return sf::Vector2f(100.0f, 100.0f); }
-	bool IsOriginPosition;
+	bool IsOriginPosition = true;
 
 };

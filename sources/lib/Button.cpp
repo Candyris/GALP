@@ -1,7 +1,7 @@
 #include "Button.hpp"
 #include "Utility.hpp"
 
-Button::Button(const char* string, sf::Vector2f size)
+Button::Button(const char* string, const sf::Vector2f& size)
 	: m_Size(size), m_String(string)
 {
 	m_Label = std::make_unique<Label>(Label(string, 24, true));

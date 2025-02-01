@@ -7,7 +7,7 @@
 class Button : public Widget
 {
 public:
-	Button(const char* string, sf::Vector2f size);
+	Button(const char* string, const sf::Vector2f& size = {100.0f, 32.0f});
 	void attachEvent(const std::function<void()>& foo);
 	void updateAction(const std::optional<sf::Event>& event, sf::RenderWindow& win);
 	void draw(sf::RenderWindow& win);

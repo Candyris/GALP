@@ -32,6 +32,8 @@ set(SOURCES_FILES
     "sources/lib/Utility.cpp"
     "example/slider.cpp"
     "sources/lib/LineEdit.cpp"
+    "sources/lib/SpinBox.cpp"
+    "example/test.cpp"
 )
 set(HEADER_FILES 
     "sources/lib/widget.hpp"
@@ -46,6 +48,7 @@ set(HEADER_FILES
     "sources/lib/GALP.hpp"
     "sources/lib/Utility.hpp"
     "sources/lib/LineEdit.hpp"
+    "sources/lib/SpinBox.hpp"
 )
 
 add_executable(main ${SOURCES_FILES} ${HEADER_FILES} )

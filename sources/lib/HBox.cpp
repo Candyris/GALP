@@ -22,7 +22,7 @@ void HBoxLayout::setLayout()
     sf::Vector2f space = m_Margin;
     for (Widget* ptr : m_WidgetCollection)
     {
-        std::cout <<"Is ORgin" << ptr->IsOriginPosition << std::endl;
+        //std::cout <<"Is ORgin" << ptr->IsOriginPosition << std::endl;
         if (ptr->IsOriginPosition)
         {
             ptr->setPosition(space + (ptr->getSize() / 2.0f));

@@ -1,6 +1,5 @@
 #pragma once
 #include "widget.hpp"
-#include <optional>
 #include <string>
 #include <functional>
 
@@ -32,10 +31,10 @@ public:
 	void setStyle(uint8_t style);
 	void updateAction(const std::optional<sf::Event>& event, sf::RenderWindow& win)
 	{
-		if (m_Component)
-		{
-			//m_Component.;
-		}
+		if (!m_Component) return;
+		
+			m_Component();
+		
 	}
 	void setColor(const sf::Color& color);
 	void attachEvent(const std::function<void()>& foo);
@@ -51,6 +50,6 @@ private:
 
 	// Attributes
 	std::string m_TextStr;
-	std::optional<std::function<void()>> m_Component;
+	std::function<void()> m_Component;
 };
 
