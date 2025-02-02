@@ -24,14 +24,14 @@ To install GALP, follow these steps:
 3. Build the project: **'cmake -S . -B build/'**
 4. Compile the project: **'cmake --build build/'**
 5. Run the project:
-   <aside>
+   <details>
     <summary>MSVC</summary>
     ./build/Debug/main
-   </aside>
-   <aside>
+   </details>
+   <details>
     <summary>Others</summary>
     ./build/main
-   </aside>
+   </details>
 
 ## **License**
 
