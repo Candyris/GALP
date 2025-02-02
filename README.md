@@ -10,7 +10,7 @@ This Project Platform support: windows and linux
 ## **Requirement**
 <ul>
   <li>CMake Version >= 3.28</li>
-  <li>C++ Complier (MSVR, GNU, CLANG)</li>
+  <li>C++ Complier (MSVC, GNU, CLANG)</li>
   <li>Git Installed </li>
 </ul>
 
