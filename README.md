@@ -26,7 +26,7 @@ To install GALP, follow these steps:
 5. Run the project:
 <details>
  <summary>MSVC</summary>
-<code>./build/Debug/main</details>code>
+<code>./build/Debug/main</details></code>
 </details>
 <details>
 <summary>Others</summary>
