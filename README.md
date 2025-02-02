@@ -37,8 +37,8 @@ To install GALP, follow these steps:
 
 Currently sfml-gui Supports the following widgets.
 
-Labels | Check Boxes | List Boxes | Sliders | Buttons | 
--------|-------------|------------|---------|---------|
+Labels | HBoxLayout | VBoxLayout | SpinBox | Sliders | Buttons | LineEdit |
+-------|------------|------------|---------|---------|---------|----------|
 
 ## **License**
 
