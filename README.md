@@ -19,7 +19,7 @@ This Project Platform support: windows and linux
 
 To install GALP, follow these steps: 
 
-1. Clone the repository: **'git clone https://github.com/username/project-title.git'**
+1. Clone the repository: ``` **'git clone https://github.com/username/project-title.git'** '''
 2. Navigate to the project directory: **'cd GALP'**
 3. Build the project: **'cmake -S . -B build/'**
 4. Compile the project: **'cmake --build build/'**
