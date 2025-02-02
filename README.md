@@ -20,9 +20,9 @@ This Project Platform support: windows and linux
 To install GALP, follow these steps: 
 
 1. Clone the repository: <code> **'git clone https://github.com/username/project-title.git'** </code>
-2. Navigate to the project directory: **'cd GALP'**
-3. Build the project: **'cmake -S . -B build/'**
-4. Compile the project: **'cmake --build build/'**
+2. Navigate to the project directory: <code> **'cd GALP'** </code>
+3. Build the project:<code> **'cmake -S . -B build/'** </code>
+4. Compile the project:<code> **'cmake --build build/'** </code>
 5. Run the project:
 <details>
  <summary>MSVC</summary>
