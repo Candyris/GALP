@@ -7,13 +7,12 @@ LineEdit::LineEdit(const sf::Vector2<float>& size, const int maxSize)
 {
 	this->IsOriginPosition = false;
 
-
 	m_Body.setSize(size);
 	m_Body.setFillColor(sf::Color::White);
 	m_Body.setOutlineColor(sf::Color(150,150,150));
 	m_Body.setOutlineThickness(3.0f);
 
-	m_InputField = std::make_unique<Label>("Nothing");
+	m_InputField = std::make_unique<Label>("");
 	m_InputField->setColor(sf::Color::Black);
 	m_InputField->setCharSize(Utility::calSection<float>(65,static_cast<int>(size.y)));
 	if (maxSize == -1)

@@ -1,4 +1,5 @@
 #pragma once 
+#include "windef.hpp"
 #include "widget.hpp"
 #include <unordered_map>
 #include <functional> 
@@ -8,7 +9,7 @@ class Application
 public:
 	using ShortcutPair = std::pair<sf::Keyboard::Key, std::function<void()>>;
 	using ShortcutMap = std::unordered_map<sf::Keyboard::Key, std::function<void()>>;
-	Application(const char* title);
+	Application(const char* title, const unsigned int width = WITDTH, const unsigned int height = HEIGHT);
 
 	void setMainWidget(Widget* widget)
 	{

@@ -1,9 +1,9 @@
 #include "Application.hpp"
 
 
-Application::Application(const char* title)
+Application::Application(const char* title ,const unsigned int width ,const unsigned int height)
 {
-	m_Window.create(sf::VideoMode({ WITDTH,HEIGHT }), title, sf::Style::Close );
+	m_Window.create(sf::VideoMode({ width,height }), title, sf::Style::Close );
 	m_MainWidget = nullptr;
 	m_Window.setVerticalSyncEnabled(true);
 	m_BackgroundColor = sf::Color::Black;

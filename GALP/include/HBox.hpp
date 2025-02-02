@@ -7,7 +7,11 @@ class HBoxLayout : public Widget
 public:
 	// later add caption here
 	HBoxLayout(const sf::Vector2f& margin = { 10.0f,10.0f }, const sf::Vector2f& spacing = { 10.0f,10.0f })
-		: m_Margin(margin), m_Space(spacing) {}
+		: m_Margin(margin), m_Space(spacing) 
+	{
+		m_HBoxSize = {}; 
+		this->IsOriginPosition = false;
+	}
 
 	// Adding the box model margin of the div
 	// void setMargin(int pixel);
@@ -29,6 +33,8 @@ public:
 
 	void draw(sf::RenderWindow& win) override;
 
+	sf::Vector2f getSize() const override { return m_HBoxSize; }
+
 private:
 	void setLayout();
 	//void setPosition(const sf::Vector2f& position) override;
@@ -37,4 +43,7 @@ private:
 	std::vector<Widget*> m_WidgetCollection;
 	sf::Vector2f m_Margin;
 	sf::Vector2f m_Space;
+
+	sf::Vector2f m_HBoxSize;
+
 };

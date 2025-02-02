@@ -16,21 +16,21 @@ public:
 		this->IsOriginPosition = true;
 
 		#pragma region settting_Body
-		m_Body.setSize(sf::Vector2f(300.0f,100.0f));
-		m_Body.setFillColor(sf::Color(70, 70, 70));
+		m_Body.setSize(sf::Vector2f(200.0f,30.0f));
+		m_Body.setFillColor(sf::Color(70, 70, 70,10));
 		m_Body.setOutlineThickness(3.0f);
 		m_Body.setOutlineColor(sf::Color::White);
 		m_Body.setOrigin(m_Body.getLocalBounds().getCenter());
 		#pragma endregion 
 		
 		#pragma region settting_Bar
-			m_Bar.setSize(sf::Vector2(Utility::calSection<float>(75.0f,m_Body.getSize().x), Utility::calSection<float>(25.0f, m_Body.getSize().y)));
+			m_Bar.setSize(sf::Vector2(Utility::calSection<float>(80.0f,m_Body.getSize().x), Utility::calSection<float>(50.0f, m_Body.getSize().y)));
 			m_Bar.setFillColor(sf::Color(1, 22, 70));
 			m_Bar.setOrigin(m_Bar.getSize()/2.0f);
 		#pragma endregion 
 		
 		#pragma region settting_BarFill
-			m_BarFill.setSize(sf::Vector2(Utility::calSection<float>(10.0f,m_Bar.getSize().x),  m_Bar.getSize().y));
+			m_BarFill.setSize(sf::Vector2(Utility::calSection<float>(20.0f,m_Bar.getSize().x),  m_Bar.getSize().y));
 			m_BarFill.setFillColor(sf::Color(0, 0, 255));
 			m_BarFill.setOrigin(m_Bar.getSize()/2.0f);
 		#pragma endregion 

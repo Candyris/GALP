@@ -37,7 +37,7 @@ sf::Vector2f Label::getSize() const
 	// returning two thing size and position
 	auto [size, position] = m_Text.getLocalBounds();
 	//std::cout << "Size: x = " << size.x << ", y = " << size.y << std::endl;
-	return sf::Vector2f(size.y * m_TextStr.size() * 1.5, size.x);
+	return sf::Vector2f(size.y * m_TextStr.size() * 1.5, size.y  );
 }
 
 

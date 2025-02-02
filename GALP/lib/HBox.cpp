@@ -22,6 +22,10 @@ void HBoxLayout::setLayout()
     sf::Vector2f space = m_Margin;
     for (Widget* ptr : m_WidgetCollection)
     {
+        if (m_HBoxSize.y < ptr->getSize().y)
+        {
+            m_HBoxSize.y = ptr->getSize().y;
+        }
         //std::cout <<"Is ORgin" << ptr->IsOriginPosition << std::endl;
         if (ptr->IsOriginPosition)
         {

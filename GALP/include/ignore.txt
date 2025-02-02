@@ -1,0 +1,16 @@
+# set(HEADER_FILES 
+#     "sources/lib/widget.hpp"
+#     "sources/lib/windef.hpp"
+#     "sources/lib/resources.hpp"
+#     "sources/lib/Label.hpp"
+#     "sources/lib/Button.hpp" 
+#     "sources/lib/HBox.hpp" 
+#     "sources/lib/Slider.hpp" 
+#     "sources/lib/Application.hpp" 
+#     "sources/lib/Object.hpp"
+#     "sources/lib/GALP.hpp"
+#     "sources/lib/Utility.hpp"
+#     "sources/lib/LineEdit.hpp"
+#     "sources/lib/SpinBox.hpp"
+#     "sources/lib/VBox.hpp"
+# )
