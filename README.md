@@ -27,7 +27,7 @@ To install GALP, follow these steps:
 
 ## **License**
 
-Project Title is released under the MIT License. See the **[LICENSE](https://www.blackbox.ai/share/LICENSE)** file for details.
+GALP is released under the MIT License. See the **[LICENSE](https://www.blackbox.ai/share/LICENSE)** file for details.
 
 ## **Conclusion**
 
