@@ -1,4 +1,4 @@
-## GALP 
+<h1>## GALP </h1>
  This is UI Library using SFML library C++
 
  ## **Introduction**
