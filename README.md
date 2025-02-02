@@ -33,6 +33,13 @@ To install GALP, follow these steps:
 ./build/main
 </details>
 
+## **Features**
+
+Currently sfml-gui Supports the following widgets.
+
+Labels | Check Boxes | List Boxes | Sliders | Buttons | 
+-------|-------------|------------|---------|---------|
+
 ## **License**
 
 GALP is released under the MIT License. See the **[LICENSE](https://www.blackbox.ai/share/LICENSE)** file for details.
